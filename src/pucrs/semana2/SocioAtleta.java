@@ -11,7 +11,6 @@ public class SocioAtleta {
         this.idade = idade;
         this.altura = altura;
         this.categoria = categoria;
-        calculaCat(); // Calcula a categoria ao instanciar
     }
 
     public String getNome() {
@@ -30,21 +29,9 @@ public class SocioAtleta {
         return categoria;
     }
 
-    // Método para calcular a categoria com base em idade e altura
-    public void calculaCat() {
-        if (idade <= 12 && altura <= 1.55) {
+    public void calcularCategoria() {
+        if (getIdade() <= 12 && getAltura() <= 1.55) {
             categoria = 10;
-        } else if (idade <= 12 && altura > 1.55) {
-            categoria = 20;
-        } else if (idade > 12 && altura <= 1.68) {
-            categoria = 30;
-        } else {
-            categoria = 40;
         }
-    }
-
-    @Override
-    public String toString() {
-        return "Nome: " + nome + ", Idade: " + idade + ", Altura: " + altura + ", Categoria: " + categoria;
     }
 }
